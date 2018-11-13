@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <classPathEntry location="/Users/xuyuan/Documents/maven/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar"/>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--<property name="javaFileEncoding" value="UTF-8"/>-->
+        <!--<property name="useMapperCommentGenerator" value="true"/>-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <jdbcConnection userId="root" password="12xy_King" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/generateId?useSSL=false"/>
+
+        <javaModelGenerator targetPackage="com.service.platform.generateId.domain.model" targetProject="/Users/xuyuan/Documents/IDEA-Workspace/service-plateform-generateId/src/main/java">
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="/Users/xuyuan/Documents/IDEA-Workspace/service-plateform-generateId/src/main/resources">
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.service.platform.generateId.mapper" type="XMLMAPPER" targetProject="/Users/xuyuan/Documents/IDEA-Workspace/service-plateform-generateId/src/main/java">
+        </javaClientGenerator>
+
+        <table tableName="entity_id_flow" domainObjectName="EntityIdFlow">
+        </table>
+
+
+    </context>
+</generatorConfiguration>

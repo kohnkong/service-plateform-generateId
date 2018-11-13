@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.service.platform.generateId.mapper.EntityIdFlowMapper">
+  <resultMap id="BaseResultMap" type="com.service.platform.generateId.domain.model.EntityIdFlow">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="head" jdbcType="VARCHAR" property="head" />
+    <result column="length" jdbcType="INTEGER" property="length" />
+    <result column="batch_id" jdbcType="INTEGER" property="batchId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+
+  <select id="selectByHeader" resultMap="BaseResultMap">
+    select
+      a.head, a.length, a.batch_id, a.create_date, a.update_date
+    from entity_id_flow a
+    where a.head = #{header}
+  </select>
+
+
+</mapper>
